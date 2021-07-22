@@ -1,4 +1,4 @@
-cd ./pwmdbg/
+cd ./pwndbg/
 ./setup.sh
 cd ..
 
