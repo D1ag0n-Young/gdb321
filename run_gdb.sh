@@ -1,16 +1,17 @@
 echo '-----------------------------------------pull peda--------------------------------------------------'
-git clone https://github.com/longld/peda.git ./peda
+git clone https://github.com/longld/peda.git ~/peda
 echo '-----------------------------------------pull gef--------------------------------------------------'
 wget -q -O ~/.gdbinit-gef.py https://github.com/hugsy/gef/raw/master/gef.py
 echo '-----------------------------------------pull pwndbg--------------------------------------------------'
-git clone https://github.com/pwndbg/pwndbg
+git clone https://github.com/pwndbg/pwndbg ~/pwndbg
 echo '-----------------------------------------pull Pwngdb--------------------------------------------------'
-git clone https://github.com/scwuaptx/Pwngdb.git
+git clone https://github.com/scwuaptx/Pwngdb.git ~/Pwngdb
 
 chmod -R 777 ./*
-cd ./pwndbg/
+filepath=$(cd "$(dirname "$0")"; pwd)
+cd ~/pwndbg/
 ./setup.sh
-cd ..
+cd $filepath
 
 echo "source ~/pwndbg/gdbinit.py" > ~/.gdbinit_pwndbg
 cat ./tmp-gdb > ~/.gdbinit
