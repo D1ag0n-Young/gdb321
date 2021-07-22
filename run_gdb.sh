@@ -1,3 +1,4 @@
+chmod -R 777 ./*
 cd ./pwndbg/
 ./setup.sh
 cd ..
