@@ -21,3 +21,4 @@ echo '''#!/bin/sh''' > /usr/bin/gdb-pwndbg
 echo '''exec gdb -q -ex init-pwndbg "$@"''' >> /usr/bin/gdb-pwndbg
 
 chmod +x /usr/bin/gdb-*
+echo 'install success!'
