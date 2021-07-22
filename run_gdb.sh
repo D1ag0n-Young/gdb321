@@ -1,24 +1,23 @@
+echo '-----------------------------------------pull peda--------------------------------------------------'
+git clone https://github.com/longld/peda.git ./peda
+echo '-----------------------------------------pull gef--------------------------------------------------'
+wget -q -O ~/.gdbinit-gef.py https://github.com/hugsy/gef/raw/master/gef.py
+echo '-----------------------------------------pull pwndbg--------------------------------------------------'
+git clone https://github.com/pwndbg/pwndbg
+echo '-----------------------------------------pull Pwngdb--------------------------------------------------'
+git clone https://github.com/scwuaptx/Pwngdb.git
+
 chmod -R 777 ./*
 cd ./pwndbg/
 ./setup.sh
 cd ..
 
 echo "source ~/pwndbg/gdbinit.py" > ~/.gdbinit_pwndbg
-cp ./gef.py ~/.gdbinit-gef.py
 cat ./tmp-gdb > ~/.gdbinit
 
-touch /usr/bin/gdb-peda
-touch /usr/bin/gdb-gef
-touch /usr/bin/gdb-pwndbg
+sudo cp gdb-peda /usr/bin/
+sudo cp gdb-gef /usr/bin/
+sudo cp gdb-pwndbg /usr/bin/
 
-echo '''#!/bin/sh''' > /usr/bin/gdb-peda
-echo '''exec gdb -q -ex init-peda "$@"''' >> /usr/bin/gdb-peda
-
-echo '''#!/bin/sh''' > /usr/bin/gdb-gef
-echo '''exec gdb -q -ex init-gef "$@"''' >> /usr/bin/gdb-gef
-
-echo '''#!/bin/sh''' > /usr/bin/gdb-pwndbg
-echo '''exec gdb -q -ex init-pwndbg "$@"''' >> /usr/bin/gdb-pwndbg
-
-chmod +x /usr/bin/gdb-*
+sudo chmod +x /usr/bin/gdb-*
 echo 'install success!'
