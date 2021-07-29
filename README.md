@@ -1,6 +1,7 @@
-这是一个将pwndbg peda pwngef三合一的脚本
+This is a script that combines pwndbg peda pwngef in one
 
-use it：
+Make sure that the local gdb has been installed before using it!
+**use it：**
 1. git clone https://github.com/1094093288/gdb321.git
 2. cd ./gdb321/
 3. ./run_gdb.sh
