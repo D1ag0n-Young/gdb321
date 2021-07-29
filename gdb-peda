@@ -1,2 +1,2 @@
 #!/bin/sh
-exec gdb -q -ex init-peda "$@"
+exec gdb-source -q -ex init-peda "$@"

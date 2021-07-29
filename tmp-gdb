@@ -25,3 +25,12 @@ document init-gef
 Initializes GEF (GDB Enhanced Features)
 end
 
+define default-gdb
+source ~/.gdbinit-gef.py
+source ~/Pwngdb/pwngdb.py
+source ~/Pwngdb/angelheap/gdbinit.py
+end
+document default-gdb
+Initializes defalutGdb (GDB Enhanced Features)
+end
+
