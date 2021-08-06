@@ -26,8 +26,8 @@ if [ "$1" = "install" ];then
 	    sudo cp gdb-peda $gdbdirpath1
 	    sudo cp gdb-gef $gdbdirpath1
 	    sudo cp gdb-pwndbg $gdbdirpath1
-	    mv $gdbpath1 $gdbdirpath1/gdb-source
-	    cp gdb $gdbdirpath1
+	    sudo mv $gdbpath1 $gdbdirpath1/gdb-source
+	    sudo cp gdb $gdbdirpath1
 	    sudo chmod +x $gdbpath1
 	    sudo chmod +x $gdbdirpath1/gdb-*
 	elif [ -f "$gdbpath2" ];then
@@ -35,8 +35,8 @@ if [ "$1" = "install" ];then
 	    sudo cp gdb-peda $gdbdirpath2
 	    sudo cp gdb-gef $gdbdirpath2
 	    sudo cp gdb-pwndbg $gdbdirpath2
-	    mv $gdbpath2 $gdbdirpath2/gdb-source
-	    cp gdb $gdbdirpath2
+	    sudo mv $gdbpath2 $gdbdirpath2/gdb-source
+	    sudo cp gdb $gdbdirpath2
 	    sudo chmod +x $gdbpath2
 	    sudo chmod +x $gdbdirpath2/gdb-*
 	else 
@@ -56,15 +56,15 @@ elif [ "$1" = "remove" ];then
 	    sudo rm  $gdbdirpath1/gdb-peda
 	    sudo rm  $gdbdirpath1/gdb-gef
 	    sudo rm  $gdbdirpath1/gdb-pwndbg
-	    rm $gdbpath1
-	    mv $gdbdirpath1/gdb-source $gdbpath1
+	    sudo rm $gdbpath1
+	    sudo mv $gdbdirpath1/gdb-source $gdbpath1
 	elif [ -f "$gdbpath2" ];then
 	    echo "the gdb path $gdbpath2" 
 	    sudo rm  $gdbdirpath2/gdb-peda
 	    sudo rm  $gdbdirpath2/gdb-gef
 	    sudo rm  $gdbdirpath2/gdb-pwndbg
-	    rm $gdbpath2
-	    mv $gdbdirpath2/gdb-source $gdbpath2
+	    sudo rm $gdbpath2
+	    sudo mv $gdbdirpath2/gdb-source $gdbpath2
 	fi
 	echo 'remove success!'
 fi
