@@ -1,0 +1,29 @@
+name: Lint
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v2
+    - name: Cache for pip
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/pip
+        key: ${{ matrix.os }}-cache-pip
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+
+    - name: Install linters
+      run: |
+        pip install isort
+
+    - name: Run tests
+      run: |
+        git diff-index --quiet HEAD -- pwndbg tests
+        isort --check-only --diff pwndbg tests
+        python3   -m py_compile               $(git ls-files 'pwndbg/*.py')
