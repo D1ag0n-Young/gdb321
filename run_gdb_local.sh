@@ -4,14 +4,14 @@ gdbpath1= "/usr/local/bin/gdb"
 gdbdirpath2="/usr/bin"
 gdbdirpath1= "/usr/local/bin"
 if [ "$1" = "install" ];then
-	echo '-----------------------------------------pull peda--------------------------------------------------'
-	git clone https://github.com/longld/peda.git ~/peda
-	echo '-----------------------------------------pull gef--------------------------------------------------'
-	wget -q -O ~/.gdbinit-gef.py https://github.com/hugsy/gef/raw/master/gef.py
-	echo '-----------------------------------------pull pwndbg--------------------------------------------------'
-	git clone https://github.com/pwndbg/pwndbg ~/pwndbg
-	echo '-----------------------------------------pull Pwngdb--------------------------------------------------'
-	git clone https://github.com/scwuaptx/Pwngdb.git ~/Pwngdb
+	echo '-----------------------------------------copy peda--------------------------------------------------'
+	cp peda ~/peda -r
+	echo '-----------------------------------------copy gef--------------------------------------------------'
+	cp .gdbinit-gef.py ~/.gdbinit-gef.py
+	echo '-----------------------------------------copy pwndbg--------------------------------------------------'
+	cp pwndbg ~/pwndbg -r
+	echo '-----------------------------------------copy Pwngdb--------------------------------------------------'
+	cp Pwngdb ~/Pwngdb -r
 
 	chmod -R 777 ./*
 	filepath=$(cd "$(dirname "$0")"; pwd)
