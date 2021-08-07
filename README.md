@@ -1,6 +1,7 @@
 This is a script that combines pwndbg peda pwngef in one
 
-Make sure that the local gdb has been installed before using it!
+Make sure that the local gdb has been installed before using it!<br>
+Because pwndbg needs some dependencies: such as pyelftools, etc., it is best to install pwntools before installation. The command is as follows: pip install pwntools -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 **use it：**
 1. git clone https://github.com/1094093288/gdb321.git

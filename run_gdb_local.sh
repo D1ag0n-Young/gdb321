@@ -4,13 +4,13 @@ gdbpath1= "/usr/local/bin/gdb"
 gdbdirpath2="/usr/bin"
 gdbdirpath1= "/usr/local/bin"
 if [ "$1" = "install" ];then
-	echo '-----------------------------------------copy peda--------------------------------------------------'
+	echo '----------------------copy peda------------------------'
 	cp peda ~/peda -r
-	echo '-----------------------------------------copy gef--------------------------------------------------'
+	echo '----------------------copy gef-------------------------'
 	cp .gdbinit-gef.py ~/.gdbinit-gef.py
-	echo '-----------------------------------------copy pwndbg--------------------------------------------------'
+	echo '----------------------copy pwndbg----------------------'
 	cp pwndbg ~/pwndbg -r
-	echo '-----------------------------------------copy Pwngdb--------------------------------------------------'
+	echo '----------------------copy Pwngdb----------------------'
 	cp Pwngdb ~/Pwngdb -r
 
 	chmod -R 777 ./*
@@ -56,15 +56,25 @@ elif [ "$1" = "remove" ];then
 	    sudo rm  $gdbdirpath1/gdb-peda
 	    sudo rm  $gdbdirpath1/gdb-gef
 	    sudo rm  $gdbdirpath1/gdb-pwndbg
-	    sudo rm $gdbpath1
-	    sudo mv $gdbdirpath1/gdb-source $gdbpath1
+	    if [ -f "$gdbdirpath1/gdb-source" ];then
+	    	sudo rm $gdbpath1
+	    	sudo mv $gdbdirpath1/gdb-source $gdbpath1
+	    	echo 'remove success!'
+	    else
+	    	echo "gdb-source maybe lost!"
+	    fi
 	elif [ -f "$gdbpath2" ];then
 	    echo "the gdb path $gdbpath2" 
 	    sudo rm  $gdbdirpath2/gdb-peda
 	    sudo rm  $gdbdirpath2/gdb-gef
 	    sudo rm  $gdbdirpath2/gdb-pwndbg
-	    sudo rm $gdbpath2
-	    sudo mv $gdbdirpath2/gdb-source $gdbpath2
+	    if [ -f "$gdbdirpath2/gdb-source" ];then
+	    	sudo rm $gdbpath2
+	    	sudo mv $gdbdirpath2/gdb-source $gdbpath2
+	    	echo 'remove success!'
+	    else
+	    	echo "gdb-source maybe lost!"
+	    fi
 	fi
-	echo 'remove success!'
+	
 fi

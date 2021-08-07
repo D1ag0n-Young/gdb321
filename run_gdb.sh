@@ -56,15 +56,24 @@ elif [ "$1" = "remove" ];then
 	    sudo rm  $gdbdirpath1/gdb-peda
 	    sudo rm  $gdbdirpath1/gdb-gef
 	    sudo rm  $gdbdirpath1/gdb-pwndbg
-	    sudo rm $gdbpath1
-	    sudo mv $gdbdirpath1/gdb-source $gdbpath1
+	    if [ -f "$gdbdirpath1/gdb-source" ];then
+	    	sudo rm $gdbpath1
+	    	sudo mv $gdbdirpath1/gdb-source $gdbpath1
+	    	echo 'remove success!'
+	    else
+	    	echo "gdb-source maybe lost!"
+	    fi
 	elif [ -f "$gdbpath2" ];then
 	    echo "the gdb path $gdbpath2" 
 	    sudo rm  $gdbdirpath2/gdb-peda
 	    sudo rm  $gdbdirpath2/gdb-gef
 	    sudo rm  $gdbdirpath2/gdb-pwndbg
-	    sudo rm $gdbpath2
-	    sudo mv $gdbdirpath2/gdb-source $gdbpath2
-	fi
-	echo 'remove success!'
+	    if [ -f "$gdbdirpath2/gdb-source" ];then
+	    	sudo rm $gdbpath2
+	    	sudo mv $gdbdirpath2/gdb-source $gdbpath2
+	    	echo 'remove success!'
+	    else
+	    	echo "gdb-source maybe lost!"
+	    fi
+	fi	
 fi
