@@ -11,6 +11,17 @@ Because pwndbg needs some dependencies: such as pyelftools, etc., it is best to 
 If you want to remove it, please use the remove parameter as follows:<br>
 `./run_gdb.sh remove`
 
+After installation
+
+1. `gdb-peda` uses peda plug-in
+2. `gdb-pwndbg` uses pwndbg plug-in
+2. `gdb-gef` uses gef plug-in
+
+**SwitchDefaultGDB**
+Change default gdb plug-in to pwndbg:
+
+`sudo ./Switchdefault.sh pwndbg`
+
 use it happy!
 
 **note**: 
