@@ -18,9 +18,18 @@ After installation
 2. `gdb-gef` uses gef plug-in
 
 **SwitchDefaultGDB**
+you can choose `gef/pwndbg/peda` as the parameter.
+**eg:**
 Change default gdb plug-in to pwndbg:
 
 `sudo ./Switchdefault.sh pwndbg`
+
+**SwitchDefaultGDBMultiarch**
+you can choose `gef/pwndbg/peda` as the parameter.
+**eg:**
+Change default gdb-multiarch plug-in to gef:
+
+`sudo ./Switch-GdbMul-default.sh gef`
 
 use it happy!
 
