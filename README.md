@@ -42,3 +42,4 @@ use it happy!
 **note**: 
 1. if you want to install it by root please run 'sudo ./run_gdb.sh '
 2. If your network is not good, please use the run_gdb_local script to run and install it in the same way
+3. If you encounter encoding problems, please check whether the default encoding is set to en_US.UTF-8 in the locale
