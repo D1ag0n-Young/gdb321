@@ -5,13 +5,13 @@ gdbdirpath2="/usr/bin"
 gdbdirpath1= "/usr/local/bin"
 if [ "$1" = "install" ];then
 	echo '----------------------copy peda------------------------'
-	cp peda ~/peda -r
+	cp submodule/peda ~/peda -r
 	echo '----------------------copy gef-------------------------'
-	cp .gdbinit-gef.py ~/.gdbinit-gef.py
+	cp submodule/gef/gef.py ~/.gdbinit-gef.py
 	echo '----------------------copy pwndbg----------------------'
-	cp pwndbg ~/pwndbg -r
+	cp submodule/pwndbg ~/pwndbg -r
 	echo '----------------------copy Pwngdb----------------------'
-	cp Pwngdb ~/Pwngdb -r
+	cp submodule/Pwngdb ~/Pwngdb -r
 
 	chmod -R 777 ./*
 	filepath=$(cd "$(dirname "$0")"; pwd)
