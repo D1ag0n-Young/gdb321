@@ -1,0 +1,12 @@
+[submodule "submodule/pwndbg"]
+	path = submodule/pwndbg
+	url = https://github.com/pwndbg/pwndbg
+[submodule "submodule/peda"]
+	path = submodule/peda
+	url = https://github.com/longld/peda.git
+[submodule "submodule/Pwngdb"]
+	path = submodule/Pwngdb
+	url = https://github.com/scwuaptx/Pwngdb.git
+[submodule "submodule/gef"]
+	path = submodule/gef
+	url = https://github.com/hugsy/gef.git
