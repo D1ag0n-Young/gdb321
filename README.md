@@ -1,45 +1,75 @@
 This is a script that combines pwndbg peda pwngef in one
 
-Make sure that the local gdb has been installed before using it!<br>
-Because pwndbg needs some dependencies: such as pyelftools, etc., it is best to install pwntools before installation. The command is as follows: pip install pwntools -i https://pypi.tuna.tsinghua.edu.cn/simple
+Make sure that the local gdb has been installed before using it!
 
-**use it：**
-1. git clone https://github.com/D1ag0n-Young/gdb321.git --recurse-submodules
-2. cd ./gdb321/
-3. ./run_gdb.sh install
 
-If you want to remove it, please use the remove parameter as follows:<br>
-`./run_gdb.sh remove`
 
-After installation
+# Dependence
 
-1. `gdb-peda` uses peda plug-in
-2. `gdb-pwndbg` uses pwndbg plug-in
-2. `gdb-gef` uses gef plug-in
+Because pwndbg needs some dependencies: such as pyelftools, etc., it is best to install pwntools before installation. The command is as follows: 
 
-**SwitchDefaultGDB**
+```
+pip install pwntools -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+# Install
+
+```
+git clone https://github.com/D1ag0n-Young/gdb321.git  --recurse-submodules
+cd ./gdb321/
+./run_gdb.sh install
+```
+
+If you want to remove it, please use the remove parameter as follows:
+
+```
+./run_gdb.sh remove
+```
+
+# Usage
+
+```
+gdb-peda #uses peda plug-in
+
+gdb-pwndbg #uses pwndbg plug-in
+
+gdb-gef #uses gef plug-in
+```
+
+## Switch Default GDB
 
 you can choose `gef/pwndbg/peda` as the parameter.<br>
 
-**eg:**
+### example
 
 Change default gdb plug-in to pwndbg:
 
-`sudo ./Switchdefault.sh pwndbg`
+```
+sudo ./Switchdefault.sh pwndbg
+```
 
-**SwitchDefaultGDBMultiarch**
+## Switch Default GDB Multiarch
 
-you can choose `gef/pwndbg/peda` as the parameter.<br>
+you can choose `gef/pwndbg/peda` as the parameter.
 
-**eg:**
+### example
 
 Change default gdb-multiarch plug-in to gef:
 
-`sudo ./Switch-GdbMul-default.sh gef`
+```
+sudo ./Switch-GdbMul-default.sh gef
+```
 
 use it happy!
 
-**note**: 
-1. if you want to install it by root please run 'sudo ./run_gdb.sh '
-2. If your network is not good, please use the run_gdb_local script to run and install it in the same way
-3. If you encounter encoding problems, please check whether the default encoding is set to en_US.UTF-8 in the locale
+## Tips
+
+if you want to install it by root please run 
+
+```
+sudo ./run_gdb.sh 
+```
+
+If your network is not good, please use the run_gdb_local script to run and install it in the same way
+
+If you encounter encoding problems, please check whether the default encoding is set to en_US.UTF-8 in the locale
